@@ -1,47 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plerick <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/15 00:54:48 by plerick           #+#    #+#             */
-/*   Updated: 2024/08/15 17:42:25 by plerick          ###   ########.fr       */
+/*   Created: 2024/08/15 16:50:52 by plerick           #+#    #+#             */
+/*   Updated: 2024/08/15 17:38:49 by plerick          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-int	ft_str_is_printable(char *str)
+char	*ft_strupcase(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 32)
+		if (str[i] >= 'a' && str[i] <= 122)
 		{
-			return (0);
+			str[i] = str[i] - 32;
+			i++;
 		}
-		i++;
+		else
+		{
+			i++;
+		}
 	}
-	return (1);
+	return (str);
 }
 /*
 int	main(void)
 {
-	char	a[] = "%^&*(";
+	char	a[] = "qbwdqbd%^&*5678  bjfnw FFWQD dqw oui";
 
-	ft_str_is_printable(a);
-	if (ft_str_is_printable(a) == 1)
-	{
-		printf ("Que des printable donc %d", ft_str_is_printable(a));
-	}
-	else
-	{
-		printf ("Pas que des printable dc %d", ft_str_is_printable(a));
-	}
+	ft_strupcase(a);
+	printf("%s", a);
 	return (0);
 }
 */
