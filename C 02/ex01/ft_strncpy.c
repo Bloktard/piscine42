@@ -6,7 +6,7 @@
 /*   By: plerick <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:05:24 by plerick           #+#    #+#             */
-/*   Updated: 2024/08/14 18:02:05 by plerick          ###   ########.fr       */
+/*   Updated: 2024/08/19 00:36:35 by plerick          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
-	while (i <= n)
+	while (i < n)
 	{
 		dest[i] = '\0';
 		i++;
@@ -33,7 +33,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 /*
 int	main(void)
 {
-	char	dest[] = "wolololo";
+	char	dest[] = "";
 	char	src[] = "blabla";
 	int	n = 6;
 

@@ -6,7 +6,7 @@
 /*   By: plerick <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 14:21:51 by plerick           #+#    #+#             */
-/*   Updated: 2024/08/15 00:49:10 by plerick          ###   ########.fr       */
+/*   Updated: 2024/08/19 00:21:55 by plerick          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ char	*ft_strcpy(char *dest, char *src)
 		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
 /*
 int	main(void)
 {
-	char	dest[] = "hohoho";
+	char	dest[] = "hohohohoho";
 	char	src[] = "blabla";
 
 	ft_strcpy(dest, src);
