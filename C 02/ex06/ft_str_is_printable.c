@@ -6,7 +6,7 @@
 /*   By: plerick <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 00:54:48 by plerick           #+#    #+#             */
-/*   Updated: 2024/08/15 17:42:25 by plerick          ###   ########.fr       */
+/*   Updated: 2024/08/16 01:55:14 by plerick          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_str_is_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 32)
+		if (str[i] < 32 && str[i] > 126)
 		{
 			return (0);
 		}
@@ -28,7 +28,7 @@ int	ft_str_is_printable(char *str)
 	}
 	return (1);
 }
-/*
+
 int	main(void)
 {
 	char	a[] = "%^&*(";
@@ -44,4 +44,3 @@ int	main(void)
 	}
 	return (0);
 }
-*/
