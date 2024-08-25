@@ -6,7 +6,7 @@
 /*   By: plerick <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 00:37:41 by plerick           #+#    #+#             */
-/*   Updated: 2024/08/22 03:20:16 by plerick          ###   ########.fr       */
+/*   Updated: 2024/08/25 22:40:32 by plerick          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strstr(char *str, char *to_find)
 
 	i = 0;
 	temp = 0;
+	if (to_find[i] == '\0')
+		return (str);
 	while (str[i] != '\0')
 	{
 		if (str[i] == to_find[0])
@@ -36,13 +38,13 @@ char	*ft_strstr(char *str, char *to_find)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 /*
 int	main(void)
 {
-	char	la_phrase[] = "toto est rigolo";
-	char	motyes[] = "est";
+	char	la_phrase[] = "";
+	char	motyes[] = "";
 
 	printf("le mot a ete trouve : %s", ft_strstr(la_phrase, motyes));
 	return (0);
