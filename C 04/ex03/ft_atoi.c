@@ -37,8 +37,6 @@ int	ft_atoi(char *str)
 		chif = chif * 10 + (str[i] - '0');
 		i++;
 	}
-	if (neg == -1)
-		chif = chif * -1;
 	return (chif * neg);
 }
 /*
