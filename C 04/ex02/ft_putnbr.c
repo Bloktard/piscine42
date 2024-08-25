@@ -1,37 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plerick <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 15:03:27 by plerick           #+#    #+#             */
-/*   Updated: 2024/08/22 01:06:59 by plerick          ###   ########.fr       */
+/*   Created: 2024/08/22 15:28:19 by plerick           #+#    #+#             */
+/*   Updated: 2024/08/25 01:34:08 by plerick          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_putchar(char c)
 {
-	int	i;
+	write(1, &c, 1);
+}
 
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
 	{
-		i++;
+		write(1, "-2147483648", 11);
+		return ;
 	}
-	return (s1[i] - s2[i]);
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb = nb * -1;
+	}
+	if (nb >= 0 && nb < 10)
+	{
+		ft_putchar(nb + '0');
+	}
+	else
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
 }
 /*
 int	main(void)
 {
-	char	s1[] = "aaa";
-	char	s2[] = "";
+	int	nb;
 
-	ft_strcmp(s1, s2);
-	printf("valeur : %d", ft_strcmp(s1, s2));
+	nb = -21483648;
+	ft_putnbr(nb);
 	return (0);
 }
 */

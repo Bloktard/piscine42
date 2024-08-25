@@ -1,37 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plerick <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 15:03:27 by plerick           #+#    #+#             */
-/*   Updated: 2024/08/22 01:06:59 by plerick          ###   ########.fr       */
+/*   Created: 2024/08/19 17:46:44 by plerick           #+#    #+#             */
+/*   Updated: 2024/08/19 20:54:24 by plerick          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
+	int	count;
 
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+	count = 0;
+	while (dest[count] != '\0')
 	{
+		count++;
+	}
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i + count] = src[i];
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	dest[i + count] = '\0';
+	return (dest);
 }
 /*
 int	main(void)
 {
-	char	s1[] = "aaa";
-	char	s2[] = "";
+	char	src[] = "blabla";
+	char	dest[] = "hoho";
 
-	ft_strcmp(s1, s2);
-	printf("valeur : %d", ft_strcmp(s1, s2));
+	ft_strcat(dest, src);
+	printf("%s", dest);
 	return (0);
 }
 */
