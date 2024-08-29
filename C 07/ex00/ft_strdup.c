@@ -44,7 +44,7 @@ char	*ft_strdup(char *src)
 	dest[i] = '\0';
 	return  (dest);
 }
-
+/*
 int	main(void)
 {
 	char	*str = "lol";
@@ -54,3 +54,4 @@ int	main(void)
 	free(str);
 	return (0);
 }
+*/
